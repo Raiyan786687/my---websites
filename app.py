@@ -146,7 +146,7 @@ with p1:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.link_button("View Code / Demo ➔", "https://instagram.com/your_username", use_container_width=True)
+    st.link_button("View Code / Demo ➔",  "https://www.instagram.com/rayyanagenticdeveloper?stkn=MWxpMDdoeHRrMWJvdA==", use_container_width=True)
 
 with p2:
     st.markdown("""
@@ -160,7 +160,7 @@ with p2:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.link_button("View Code / Demo ➔", "https://facebook.com/your_profile", use_container_width=True)
+    st.link_button("View Code / Demo ➔",  "https://www.facebook.com/share/1YTR5R27rd/", use_container_width=True)
 
 with p3:
     st.markdown("""
@@ -174,4 +174,4 @@ with p3:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.link_button("View Code / Demo ➔", "https://instagram.com/your_username", use_container_width=True)
+    st.link_button("View Code / Demo ➔","https://www.instagram.com/rayyanagenticdeveloper?stkn=MWxpMDdoeHRrMWJvdA==", use_container_width=True)

@@ -1,109 +1,177 @@
 import streamlit as st
 
-# Page Config (Agar pehle se nahi lagaya)
-st.set_page_config(page_title="Rayyan | Projects Showcase", layout="wide")
+# Page Configuration
+st.set_page_config(
+    page_title="Rayyan | Agentic Developer",
+    page_icon="⚡",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 
-# Custom CSS for Interactive Cards
+# Advanced Custom CSS Injection
 st.markdown("""
 <style>
-/* Card Styling */
-.project-card {
-    background-color: #1e293b;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    /* Dark Metallic Background */
+    .stApp {
+        background: #0b0f19;
+        color: #e2e8f0;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    /* Neon Hero Section */
+    .hero-container {
+        text-align: center;
+        padding: 50px 20px 30px 20px;
+        background: linear-gradient(180deg, rgba(56,189,248,0.08) 0%, rgba(11,15,25,0) 100%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        margin-bottom: 40px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+        letter-spacing: -1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: #94a3b8;
+        max-width: 650px;
+        margin: 0 auto 20px auto;
+    }
+    
+    .glow-badge {
+        background: rgba(56, 189, 248, 0.1);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        padding: 6px 18px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 15px;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
-    border-color: #38bdf8;
-}
-
-/* Card Titles & Text */
-.card-title {
-    color: #38bdf8;
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.card-desc {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-/* Tech Stack Badges */
-.tech-badge {
-    background-color: rgba(56, 189, 248, 0.1);
-    color: #38bdf8;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-right: 5px;
-    display: inline-block;
-}
+    /* Glassmorphism Project Cards */
+    .glass-card {
+        background: rgba(18, 24, 38, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 28px;
+        height: 100%;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        margin-bottom: 15px;
+    }
+    
+    .card-title {
+        color: #f8fafc;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .card-text {
+        color: #94a3b8;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    /* Tech Pills */
+    .pill {
+        background: #1e293b;
+        color: #38bdf8;
+        padding: 4px 12px;
+        border-radius: 8px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-right: 6px;
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    /* Hide Default Header/Footer */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🚀 Featured Projects")
-st.write("Mere banaye gaye kuch interactive Python aur AI/Voice tools:")
+# Hero Header
+st.markdown("""
+<div class="hero-container">
+    <div class="glow-badge">RAYYAN AGENTIC DEVELOPER</div>
+    <h1 class="hero-title">Crafting Intelligent AI Tools & Apps</h1>
+    <p class="hero-subtitle">Software Engineering Student & Python Developer specializing in Voice Commands, AI Workflows, and Custom Interactive Interfaces.</p>
+</div>
+""", unsafe_allow_html=True)
 
-# Grid Layout (3 Columns)
-col1, col2, col3 = st.columns(3)
+# Social Media Strip
+col_a, col_b, col_c = st.columns([1, 2, 1])
+with col_b:
+    sc1, sc2 = st.columns(2)
+    with sc1:
+        st.link_button("📸 Follow on Instagram", "https://www.instagram.com/rayyanagenticdeveloper?stkn=MWxpMDdoeHRrMWJvdA==", use_container_width=True, type="primary")
+    with sc2:
+        st.link_button("📘 Connect on Facebook", "https://www.facebook.com/share/1YTR5R27rd/", use_container_width=True)
 
-# --- Project Card 1 ---
-with col1:
+st.markdown("<br>", unsafe_allow_html=True)
+
+# Showcase Title
+st.markdown("<h2 style='text-align: center; color: #f8fafc; font-weight: 800;'>Featured Projects</h2>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #64748b; margin-bottom: 30px;'>Explore some of my recent Python & AI engineering builds</p>", unsafe_allow_html=True)
+
+# Projects Grid
+p1, p2, p3 = st.columns(3)
+
+with p1:
     st.markdown("""
-    <div class="project-card">
-        <div class="card-title">🎙️ Voice Command Calculator</div>
-        <div class="card-desc">
-            Speech recognition aur audio processing powered smart calculator jo voice commands par mathematical operations perform karta hai.
-        </div>
-        <div>
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">SoundDevice</span>
-            <span class="tech-badge">SpeechRecognition</span>
+    <div class="glass-card">
+        <div class="card-title">🎙️ Voice Calculator</div>
+        <p class="card-text">Smart audio-driven math utility built with speech recognition and Python audio processing for seamless voice command input.</p>
+        <div style="margin-bottom: 15px;">
+            <span class="pill">Python</span>
+            <span class="pill">SoundDevice</span>
+            <span class="pill">SpeechRec</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.link_button("View Source / Demo", "https://www.instagram.com/rayyanagenticdeveloper?stkn=MWxpMDdoeHRrMWJvdA==", use_container_width=True)
+    st.link_button("View Code / Demo ➔", "https://instagram.com/your_username", use_container_width=True)
 
-# --- Project Card 2 ---
-with col2:
+with p2:
     st.markdown("""
-    <div class="project-card">
-        <div class="card-title">🤖 AI Agentic Assistant</div>
-        <div class="card-desc">
-            OpenRouter APIs aur custom LLM prompt workflows ka istemaal karke banaya gaya intelligent chatbot framework.
-        </div>
-        <div>
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">OpenRouter</span>
-            <span class="tech-badge">AI Frameworks</span>
+    <div class="glass-card">
+        <div class="card-title">🤖 Agentic AI Bot</div>
+        <p class="card-text">Custom LLM integration framework leveraging OpenRouter API endpoints to build intelligent, autonomous chat and task workflows.</p>
+        <div style="margin-bottom: 15px;">
+            <span class="pill">Python</span>
+            <span class="pill">OpenRouter</span>
+            <span class="pill">AI Agents</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.link_button("View Details", "https://www.facebook.com/share/1YTR5R27rd/", use_container_width=True)
+    st.link_button("View Code / Demo ➔", "https://facebook.com/your_profile", use_container_width=True)
 
-# --- Project Card 3 ---
-with col3:
+with p3:
     st.markdown("""
-    <div class="project-card">
-        <div class="card-title">📊 Interactive Streamlit Web Apps</div>
-        <div class="card-desc">
-            Data visualization, conditional security logic, aur user-friendly dashboards ke liye interactive Web Applications.
-        </div>
-        <div>
-            <span class="tech-badge">Streamlit</span>
-            <span class="tech-badge">Pandas</span>
-            <span class="tech-badge">Python</span>
+    <div class="glass-card">
+        <div class="card-title">🌐 Streamlit Apps</div>
+        <p class="card-text">Fast, responsive web apps focused on interactive logic, security scripts, and dynamic graphical user interfaces for desktop and web.</p>
+        <div style="margin-bottom: 15px;">
+            <span class="pill">Streamlit</span>
+            <span class="pill">Tkinter</span>
+            <span class="pill">UI/UX</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.link_button("Explore Web Apps", "https://instagram.com/your_username", use_container_width=True)
+    st.link_button("View Code / Demo ➔", "https://instagram.com/your_username", use_container_width=True)
